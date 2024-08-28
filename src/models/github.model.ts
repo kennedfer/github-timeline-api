@@ -4,7 +4,9 @@ export type GithubRepository = {
   date: Date;
 };
 
-export type GithubUserInfo = {
+export class GithubUserInfo {
   name: string;
   repositories: GithubRepository[];
-};
+
+  constructor(githubApiResponse: any) {}
+}

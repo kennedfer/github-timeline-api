@@ -26,6 +26,18 @@ export class GithubUserInfo {
     this.avatar_url = avatar_url;
     this.repositories = repositoriesApi.map(
       (repoApi: any) => new GithubRepository(repoApi),
-    );
+    ).sort((a: GithubRepository,b: GithubRepository) => {
+      const aDate:number = Date.parse(a.created_at);
+      const bDate:number = Date.parse(b.created_at);
+
+      if(aDate > bDate){
+        return 1;
+      }
+       if(aDate < bDate){
+        return -1;
+      }
+
+      return 0;
+    });
   }
 }

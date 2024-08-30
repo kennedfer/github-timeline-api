@@ -1,15 +1,15 @@
 export class GithubRepository {
   name: string;
   description: string;
-  created_at: Date;
-  updated_at: Date;
+  created_at: string;
+  updated_at: string;
   html_url: string;
 
   constructor({ name, description, created_at, updated_at, html_url }: any) {
     this.name = name;
     this.description = description;
-    created_at = created_at;
-    updated_at = updated_at;
+    this.created_at = created_at;
+    this.updated_at = updated_at;
     this.html_url = html_url;
   }
 }
